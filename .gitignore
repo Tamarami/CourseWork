@@ -1,2 +1,9 @@
 /.idea/
 /aclImdb/
+/out/production/CourseWork/com/course/Helper$FileHelper.class
+/out/production/CourseWork/com/course/Helper.class
+/out/production/CourseWork/com/course/Indexer.class
+/out/production/CourseWork/com/course/IndexerClient.class
+/out/production/CourseWork/com/course/IndexThreadModel.class
+/out/production/CourseWork/com/course/IndexWorker.class
+/out/production/CourseWork/com/course/IndexWorkerImpl.class
