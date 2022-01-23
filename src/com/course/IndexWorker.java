@@ -8,16 +8,16 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import com.course.Helper.*;
 
-public class IndexBuilder {
+public class IndexWorker {
 
     private final ConcurrentHashMap<String, Set<Path>> indexMap = new ConcurrentHashMap<>();
 
-    public void build(int threadAmount) throws IOException {
-        IndexerThreadModel[] threadArray = new IndexerThreadModel[threadAmount];
+    public void construct(int threadAmount) throws IOException {
+        IndexThreadModel[] threadArray = new IndexThreadModel[threadAmount];
         List<Path> pathsList = FileHelper.createPathsList();
 
         for (int i = 0; i < threadAmount; i++) {
-            threadArray[i] = new IndexerThreadModel(indexMap, pathsList, i, threadAmount);
+            threadArray[i] = new IndexThreadModel(indexMap, pathsList, i, threadAmount);
             threadArray[i].start();
         }
         for (int i = 0; i < threadAmount; i++) {
@@ -29,7 +29,7 @@ public class IndexBuilder {
         }
     }
 
-    public String searchIndex(String desiredWord) {
+    public String search(String desiredWord) {
         try {
             String key = FileHelper.normalizeWord(desiredWord);
             Set<Path> result = indexMap.get(key);

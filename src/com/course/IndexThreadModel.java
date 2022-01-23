@@ -6,13 +6,13 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import com.course.Helper.*;
 
-public class IndexerThreadModel extends Thread {
+public class IndexThreadModel extends Thread {
     ConcurrentHashMap<String, Set<Path>> invertedIndexMap;
     List<Path> filePaths;
     Integer threadNumber, threadsQuantity;
 
-    public IndexerThreadModel(ConcurrentHashMap<String, Set<Path>> invertedIndexMap, List<Path> filePaths,
-                              Integer threadNumber, Integer maxThreads) {
+    public IndexThreadModel(ConcurrentHashMap<String, Set<Path>> invertedIndexMap, List<Path> filePaths,
+                            Integer threadNumber, Integer maxThreads) {
         this.invertedIndexMap = invertedIndexMap;
         this.filePaths = filePaths;
         this.threadNumber = threadNumber;
