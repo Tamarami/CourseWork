@@ -13,8 +13,8 @@ public class Helper {
 
     public static class FileHelper {
 
-        private static final String basePath = "D:\\JavaLabs\\CourseWParallel\\aclImdb\\";
-        private static final String[] pathParts = {"test\\neg","test\\pos","train\\neg","train\\pos","train\\unsup"};
+        private static final String basePath = "D:\\Study\\CourseWork\\aclImdb\\";
+        private static final String[] pathParts = {"test\\neg", "test\\pos", "train\\neg", "train\\pos", "train\\unsup"};
 
         private static String getBasePath() {
             return basePath;
@@ -57,5 +57,4 @@ public class Helper {
         }
 
     }
-
 }

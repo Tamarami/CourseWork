@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import com.course.Helper.*;
 
-public class IndexWorker {
+public class IndexWorkerImpl implements IndexWorker {
 
     private final ConcurrentHashMap<String, Set<Path>> indexMap = new ConcurrentHashMap<>();
 
@@ -33,9 +33,9 @@ public class IndexWorker {
         try {
             String key = FileHelper.normalizeWord(desiredWord);
             Set<Path> result = indexMap.get(key);
-            return result.isEmpty() ? "Word not found" : result.toString();
+            return result.isEmpty() ? "Слово не найдено" : result.toString();
         } catch (NullPointerException npe) {
-            return "Word not found";
+            return "Слово не найдено";
         }
     }
 
