@@ -23,7 +23,10 @@ public class Indexer {
         System.out.println("Запуск индексации с использованием " + threadAmount + " потоков");
 
         try {
+            long startTime = System.currentTimeMillis();
             worker.construct(threadAmount);
+            long diff = System.currentTimeMillis() - startTime;
+            System.out.println("Время выполнения - " + diff);
         } catch (IOException e) {
             e.printStackTrace();
         }
